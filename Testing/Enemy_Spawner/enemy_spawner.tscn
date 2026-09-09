@@ -1,66 +1,63 @@
-[gd_scene format=3 uid="uid://djmvkf0rx7nal"]
+[gd_scene format=3 uid="uid://mxaognuyx2yc"]
 
-[ext_resource type="Script" uid="uid://blaxbq1koqt6g" path="res://Testing/Enemies_AI/test_enemies.gd" id="1_as0xj"]
-[ext_resource type="PackedScene" uid="uid://rhneq0nt71h2" path="res://Game/Scripts/Utils/enemy_spawner.tscn" id="2_fn02q"]
-[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_ndyq0"]
-[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="3_ao2e3"]
-[ext_resource type="Resource" uid="uid://b8wasyfa3rrwu" path="res://Content/Enemies/melee_skeleton.tres" id="3_as0xj"]
+[ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="1_5dqwh"]
+[ext_resource type="Script" uid="uid://vkq31gqnr8qg" path="res://Testing/Enemy_Spawner/enemy_spawner.gd" id="1_ybbwa"]
+[ext_resource type="PackedScene" uid="uid://rhneq0nt71h2" path="res://Game/Scripts/Utils/enemy_spawner.tscn" id="2_hvpcd"]
+[ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="3_bp6n0"]
+[ext_resource type="Resource" uid="uid://ds86nh5aeov5p" path="res://Content/Enemies/archer_skeleton.tres" id="3_ybbwa"]
+[ext_resource type="Resource" uid="uid://b8wasyfa3rrwu" path="res://Content/Enemies/melee_skeleton.tres" id="4_r0hsb"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_wdqvv"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_ybbwa"]
 vertices = PackedVector3Array(0.0740852, 0.542709, -1, 0.324085, 0.542709, 0, 1.82409, 0.542709, 0, 1.82409, 0.542709, -2.75, 4.07409, 0.542709, -9.5, -9.67591, 0.542709, -9.5, -9.67591, 0.542709, -1.25, 4.07409, 0.542709, -3, 7.82409, 0.542709, -3, 8.07409, 0.542709, 1, 9.57409, 0.542709, 1, 9.57409, 0.542709, -9.5, 8.07409, 0.542709, 3, 6.82409, 0.542709, 3.25, 6.82409, 0.542709, 5.25, 5.82409, 2.04271, 2.25, 7.07409, 2.04271, 2, 7.07409, 2.04271, -2, 2.82409, 2.04271, -2, 2.82409, 2.04271, 2, 4.57409, 2.04271, 2.25, 4.57409, 0.792709, 5.25, 3.57409, 0.542709, 5, 3.07409, 0.542709, 9.5, 9.57409, 0.542709, 9.5, 5.82409, 0.792709, 5.25, 0.0740852, 0.542709, 1.25, 1.82409, 0.542709, 3, -9.67591, 0.542709, 1, -9.67591, 0.542709, 9.5, 3.57409, 0.542709, 3.25)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 0, 6), PackedInt32Array(4, 6, 5), PackedInt32Array(4, 7, 3), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 11), PackedInt32Array(12, 9, 10), PackedInt32Array(12, 14, 13), PackedInt32Array(15, 20, 16), PackedInt32Array(16, 20, 19), PackedInt32Array(16, 19, 18), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 21), PackedInt32Array(12, 10, 14), PackedInt32Array(14, 10, 24), PackedInt32Array(25, 14, 23), PackedInt32Array(23, 14, 24), PackedInt32Array(23, 21, 25), PackedInt32Array(21, 20, 25), PackedInt32Array(25, 20, 15), PackedInt32Array(1, 2, 26), PackedInt32Array(26, 2, 27), PackedInt32Array(27, 22, 26), PackedInt32Array(26, 22, 23), PackedInt32Array(26, 23, 28), PackedInt32Array(28, 23, 29), PackedInt32Array(27, 30, 22)]
 
-[node name="TestRangedEnemy" type="Node3D" unique_id=1891263668]
-script = ExtResource("1_as0xj")
+[node name="EnemySpawner" type="Node3D" unique_id=396286016]
+script = ExtResource("1_ybbwa")
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=383981212]
-navigation_mesh = SubResource("NavigationMesh_wdqvv")
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1587618661]
+navigation_mesh = SubResource("NavigationMesh_ybbwa")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=22699080]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1785856854]
 use_collision = true
 collision_layer = 2
 size = Vector3(20, 0.5, 20)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2000583697]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=711689898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96554, 1.38092, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(5, 0.5, 5)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=915783920]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=890725235]
 transform = Transform3D(0.00305433, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00305433, -5.42441, 2.5942, 0)
 use_collision = true
 collision_layer = 2
 size = Vector3(1, 5, 10)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1156648774]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=2095152344]
 transform = Transform3D(1, 0, 0, 0, 0.904968, -0.425479, 0, 0.425479, 0.904968, 5.30028, 0.332649, 4.66956)
 use_collision = true
 collision_layer = 2
 size = Vector3(2, 0.5, 5)
 
-[node name="Player" parent="." unique_id=217514591 instance=ExtResource("2_ndyq0")]
+[node name="Player" parent="." unique_id=1584554695 instance=ExtResource("1_5dqwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 0)
 
-[node name="Enemies" type="Node3D" parent="." unique_id=1413289160]
+[node name="Enemies" type="Node3D" parent="." unique_id=708242250]
 
-[node name="MSkeleton" parent="Enemies" unique_id=1231959403 instance=ExtResource("2_fn02q")]
+[node name="ASkeleton" parent="Enemies" unique_id=1231959403 instance=ExtResource("2_hvpcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.130159, 2.6387424, -5.121957)
+enemy_data = ExtResource("3_ybbwa")
+
+[node name="MSkeleton" parent="Enemies" unique_id=1921934472 instance=ExtResource("2_hvpcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2703314, 1.6170049, -7.173212)
-enemy_data = ExtResource("3_as0xj")
+enemy_data = ExtResource("4_r0hsb")
 
-[node name="MSkeleton2" parent="Enemies" unique_id=2079223297 instance=ExtResource("2_fn02q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2703314, 1.6170049, -7.173212)
-enemy_data = ExtResource("3_as0xj")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1450680690]
 
-[node name="MSkeleton3" parent="Enemies" unique_id=1242336960 instance=ExtResource("2_fn02q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7296686, 1.6170049, -7.173212)
-enemy_data = ExtResource("3_as0xj")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=296736232]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1949612825]
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1832934522]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.45683, 0)
 omni_range = 19.31
 
-[node name="SystemsController" type="Node" parent="." unique_id=70321551]
-script = ExtResource("3_ao2e3")
+[node name="SystemsController" type="Node" parent="." unique_id=650095441]
+script = ExtResource("3_bp6n0")

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bvvasfjldvr28" path="res://Testing/Color_Reveal_Lighting/test_color_reveal_lighting.gd" id="1_oa732"]
 [ext_resource type="PackedScene" uid="uid://bpj4ct6sdsxmd" path="res://Content/Characters/player.tscn" id="2_uvuuj"]
-[ext_resource type="PackedScene" uid="uid://b3hamct2ecmpx" path="res://Content/Enemies/enemy.tscn" id="3_73hcq"]
+[ext_resource type="PackedScene" uid="uid://rhneq0nt71h2" path="res://Game/Scripts/Utils/enemy_spawner.tscn" id="3_3sr5p"]
 [ext_resource type="Shader" uid="uid://14ob0yein7es" path="res://Assets/Shaders/Illumination/color_reveal_lighting.gdshader" id="4_7p5fo"]
+[ext_resource type="Resource" uid="uid://b8wasyfa3rrwu" path="res://Content/Enemies/melee_skeleton.tres" id="4_ys4f1"]
 [ext_resource type="Script" uid="uid://csvfsgxthaavm" path="res://Game/controller.gd" id="5_cq73f"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wdqvv"]
@@ -48,14 +49,19 @@ size = Vector3(2, 0.5, 5)
 [node name="Player" parent="." unique_id=217514591 instance=ExtResource("2_uvuuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80747, 0)
 
-[node name="Enemy" parent="." unique_id=1332273276 instance=ExtResource("3_73hcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.190372, 3.03862, -8.0513)
+[node name="Enemies" type="Node3D" parent="." unique_id=1681009572]
 
-[node name="Enemy2" parent="." unique_id=2069686704 instance=ExtResource("3_73hcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60557, 1.25, -7.16506)
+[node name="MSkeleton" parent="Enemies" unique_id=1231959403 instance=ExtResource("3_3sr5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2703314, 1.6170049, -7.173212)
+enemy_data = ExtResource("4_ys4f1")
 
-[node name="Enemy3" parent="." unique_id=481712196 instance=ExtResource("3_73hcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65875, 1.25, -7.07483)
+[node name="MSkeleton2" parent="Enemies" unique_id=1697034169 instance=ExtResource("3_3sr5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2703314, 1.6170049, -7.173212)
+enemy_data = ExtResource("4_ys4f1")
+
+[node name="MSkeleton3" parent="Enemies" unique_id=839866236 instance=ExtResource("3_3sr5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7296686, 1.6170049, -7.173212)
+enemy_data = ExtResource("4_ys4f1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=296736232]
 
