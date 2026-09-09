@@ -1,9 +1,16 @@
 extends Control
 
 @onready var _panel: Control = $Panel
-@onready var _name_label: Label = $Panel/VBoxContainer/NameLabel
-@onready var _quality_label: Label = $Panel/VBoxContainer/QualityLabel
-@onready var _description_label: Label = $Panel/VBoxContainer/DescriptionLabel
+@onready var _name_label: RichTextLabel = $Panel/VBoxContainer/NameLabel
+@onready var _description_label: RichTextLabel = $Panel/VBoxContainer/DescriptionLabel
+
+## Este diccionario mapea cada calidad a un color, usando Global.ItemQuality como llave.
+var quality_to_color : Dictionary[Global.ItemQuality, Color] = {
+	Global.ItemQuality.vulgar : Color.GRAY,
+	Global.ItemQuality.fine : Color.GREEN,
+	Global.ItemQuality.divine : Color.YELLOW,
+	Global.ItemQuality.spiritual : Color.SKY_BLUE,
+}
 
 func _ready() -> void:
 	_panel.hide()
@@ -11,7 +18,6 @@ func _ready() -> void:
 ## Muestra el tooltip con la información del item que se le pase.
 func show_for(item: Item) -> void:
 	_name_label.text = item.name
-	_quality_label.text = Globals.ItemQuality.keys()[item.quality]
 	_description_label.text = item.description
 	_panel.show()
 

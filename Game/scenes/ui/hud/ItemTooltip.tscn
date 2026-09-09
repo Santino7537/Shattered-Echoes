@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://stwrvxonnspb" path="res://Game/Scripts/ui/ItemTooltip.gd" id="1_0m4ou"]
 
+[sub_resource type="Theme" id="Theme_u04hk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0m4ou"]
+bg_color = Color(0.11326108, 0.6504758, 0.8731869, 1)
+
 [node name="ItemTooltip" type="Control" unique_id=252018889]
 layout_mode = 3
 anchors_preset = 15
@@ -21,11 +26,11 @@ layout_mode = 0
 offset_right = 290.0
 offset_bottom = 189.0
 
-[node name="NameLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1578819327]
+[node name="NameLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1641650831]
 layout_mode = 2
+theme = SubResource("Theme_u04hk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0m4ou")
 
-[node name="QualityLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1327113121]
+[node name="DescriptionLabel" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1417265671]
 layout_mode = 2
-
-[node name="DescriptionLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1398335764]
-layout_mode = 2
+bbcode_enabled = true
