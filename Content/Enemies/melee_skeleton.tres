@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://b8wasyfa3rrwu"]
+
+[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="1_w2pkv"]
+[ext_resource type="Script" uid="uid://dnljp4lqk872s" path="res://Content/Enemies/enemy.gd" id="2_3q8br"]
+[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_hx5l8"]
+[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_02du8"]
+[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="4_02du8"]
+
+[sub_resource type="Resource" id="Resource_02du8"]
+script = ExtResource("2_hx5l8")
+jump_velocity = 2.0
+base_value = 3.0
+metadata/_custom_type_script = "uid://fiqspojmjr1c"
+
+[sub_resource type="Resource" id="Resource_exfq8"]
+script = ExtResource("3_02du8")
+max_player_distance = 2.0
+min_player_distance = 1.5
+metadata/_custom_type_script = "uid://djh5kjox4u2q1"
+
+[sub_resource type="Resource" id="Resource_ro6b6"]
+script = ExtResource("4_02du8")
+max_health = 30.0
+metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
+
+[resource]
+script = ExtResource("2_3q8br")
+initial_components = Array[ExtResource("1_w2pkv")]([SubResource("Resource_02du8"), SubResource("Resource_exfq8"), SubResource("Resource_ro6b6")])
+metadata/_custom_type_script = "uid://dnljp4lqk872s"

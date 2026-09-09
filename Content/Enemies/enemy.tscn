@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://b3hamct2ecmpx"]
 
 [ext_resource type="Script" uid="uid://drncvf5fqmj4t" path="res://Engine/Components/entity.gd" id="1_rvfqy"]
-[ext_resource type="Script" uid="uid://fiqspojmjr1c" path="res://Engine/Components/Resource/Stadistics/movement.gd" id="2_cv27q"]
-[ext_resource type="Script" uid="uid://kjkedm5mlvst" path="res://Engine/Components/Resource/component.gd" id="2_kbvwg"]
-[ext_resource type="Script" uid="uid://djh5kjox4u2q1" path="res://Engine/Components/Resource/Miscellaneous/enemy_behavior.gd" id="3_61iar"]
 [ext_resource type="Script" uid="uid://cyky51380i3ww" path="res://Engine/Components/Node/enemy_navigation.gd" id="5_i0otu"]
-[ext_resource type="Script" uid="uid://ckn4rlnpkmfxs" path="res://Engine/Components/Resource/Stadistics/health.gd" id="5_qxkvb"]
 [ext_resource type="Script" uid="uid://bvugimqgg43aw" path="res://Engine/Components/Node/hurtbox.gd" id="7_6ylue"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82i5i"]
@@ -15,21 +11,6 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_82i5i")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hggra"]
-
-[sub_resource type="Resource" id="Resource_2t4ei"]
-script = ExtResource("2_cv27q")
-jump_velocity = 2.0
-base_value = 3.0
-
-[sub_resource type="Resource" id="Resource_n3jev"]
-script = ExtResource("3_61iar")
-max_player_distance = 3.0
-min_player_distance = 2.0
-
-[sub_resource type="Resource" id="Resource_6ylue"]
-script = ExtResource("5_qxkvb")
-max_health = 30.0
-metadata/_custom_type_script = "uid://ckn4rlnpkmfxs"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d4ryt"]
 size = Vector3(0.7, 1.5, 0.7)
@@ -54,7 +35,6 @@ time_horizon_agents = 1.5
 
 [node name="EntityComponent" type="Node" parent="." unique_id=1312685923]
 script = ExtResource("1_rvfqy")
-initial_components = Array[ExtResource("2_kbvwg")]([SubResource("Resource_2t4ei"), SubResource("Resource_n3jev"), SubResource("Resource_6ylue")])
 
 [node name="EnemyNavigation" type="Node" parent="EntityComponent" unique_id=39120433]
 script = ExtResource("5_i0otu")
